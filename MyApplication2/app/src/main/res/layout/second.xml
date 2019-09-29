@@ -4,13 +4,9 @@
               android:layout_width="match_parent"
               android:gravity="center"
               android:layout_height="match_parent">
-    <com.qmuiteam.qmui.widget.QMUIAnimationListView
+    <android.support.v7.widget.RecyclerView
             android:id="@+id/lv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?attr/qmui_topbar_height"
-            android:background="?attr/qmui_config_color_gray_8"
-            android:divider="@null"
-            android:dividerHeight="0dp"/>
+            android:layout_height="match_parent"/>
 
 </LinearLayout>
