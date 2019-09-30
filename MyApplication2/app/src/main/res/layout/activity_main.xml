@@ -12,7 +12,7 @@
         android:textSize="40dp"
         android:textColor="@color/colorPrimary"
 />
-    <Button
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
             android:id="@+id/bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

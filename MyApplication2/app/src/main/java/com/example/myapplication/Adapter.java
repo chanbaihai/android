@@ -39,7 +39,13 @@ public class Adapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         ImageView iv = (ImageView) viewHolder.itemView.findViewById(R.id.im);
-        ImageLoader.getInstance().displayImage("https://cdn.mom1.cn/?mom="+data.get(i), iv);
+        String count = data.get(i);
+//        http://lorempixel.com/1600/900
+//        https://unsplash.it/1600/900?random（国内加载略慢）
+//        https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture【返回必应图片】
+//        https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E【随机美女图片】
+//        http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1（必应返回JSON数据，具体百度
+        ImageLoader.getInstance().displayImage("https://unsplash.it/1600/900?random", iv);
     }
 
     @Override
