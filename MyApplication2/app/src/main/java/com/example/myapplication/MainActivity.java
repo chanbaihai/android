@@ -12,13 +12,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
         edit.commit();
         tx = findViewById(R.id.tx);
         bt = findViewById(R.id.bt);
+//        初始化图片加载控件
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .memoryCacheSize(100 * 1024 * 1024)
+                .diskCacheSize(100*1024*1024)
+                .build();
+        ImageLoader.getInstance().init(config);
+        getCapture(findViewById(R.id.capture));
+
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,5 +122,11 @@ public class MainActivity extends AppCompatActivity {
             String feedback_data = data.getStringExtra("feedback data");
             Toast.makeText(this,feedback_data,Toast.LENGTH_LONG).show();
         }
+    }
+    public void getCapture(View imgview){
+        String str = UUID.randomUUID().toString();
+        str = "http://58.213.110.130:8990/AM-BIM/captcha?uuid="+str;
+        ImageLoader imageloader = ImageLoader.getInstance();
+        imageloader.displayImage(str,(ImageView) imgview);
     }
 }

@@ -10,8 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.widget.ListView;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class Second extends AppCompatActivity {
     ListView lv;
@@ -37,11 +35,6 @@ public class Second extends AppCompatActivity {
         setContentView(R.layout.second);
         cox = getBaseContext();
 
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .memoryCacheSize(100 * 1024 * 1024)
-                .diskCacheSize(100*1024*1024)
-			.build();
-        ImageLoader.getInstance().init(config);
         ad = new Adapter(this);
         RecyclerView lv = (RecyclerView)findViewById(R.id.lv);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);

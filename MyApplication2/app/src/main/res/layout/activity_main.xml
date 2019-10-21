@@ -82,7 +82,9 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
-                android:src="@mipmap/ic_launcher_round"
+                android:id="@+id/capture"
+                android:scaleType="centerCrop"
+                android:onClick="getCapture"
                 />
     </LinearLayout>
     <Button
