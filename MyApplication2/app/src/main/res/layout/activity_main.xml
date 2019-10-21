@@ -1,24 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              android:background="#93C9FE"
               android:layout_width="match_parent"
               android:gravity="center"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:clipChildren="false"
+              android:clipToPadding="false"
+              android:fitsSystemWindows="true"
+        >
+    <RelativeLayout
+            android:elevation="4dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:background="@drawable/cemicircle"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="160dp"
+            android:layout_height="80dp">
+        <LinearLayout
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="140dp"
+                android:layout_marginBottom="-2dp"
+                android:gravity="center"
+                android:background="@drawable/cemicircle2"
+                android:layout_height="70dp">
+<ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/ic_launcher_round"/>
+        </LinearLayout>
+    </RelativeLayout>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/roundcircle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center"
+        >
 <TextView
+        android:layout_marginTop="50dp"
         android:id="@+id/tx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="美图"
-        android:textSize="40dp"
-        android:textColor="@color/colorPrimary"
-/>
-    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-            android:id="@+id/bt"
-            android:layout_width="wrap_content"
+        android:text="建筑大数据运维管理微平台"
+        android:textSize="20sp"
+        android:textColor="#242424"
+        android:textStyle="bold"/>
+    <EditText
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="查看美图"
+            android:hint="请输入账号"
+            android:drawableLeft="@drawable/qmui_icon_chevron"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:textColor="@color/colorAccent"
-    />
+            android:hint="请输入密码"
+            android:drawableLeft="@drawable/qmui_icon_chevron"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入验证码"/>
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_launcher_round"
+                />
+    </LinearLayout>
+    <Button
+            android:id="@+id/bt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:text="登录"
+            android:textColor="#fff"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/roundcircle2"/>
+</LinearLayout>
 </LinearLayout>

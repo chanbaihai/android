@@ -10,16 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.widget.ListView;
-import com.google.gson.Gson;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import okhttp3.Response;
-import util.Http;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Second extends AppCompatActivity {
     ListView lv;
@@ -44,6 +36,7 @@ public class Second extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second);
         cox = getBaseContext();
+
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
                 .memoryCacheSize(100 * 1024 * 1024)
                 .diskCacheSize(100*1024*1024)
